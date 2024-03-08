@@ -1,0 +1,28 @@
+
+
+spring:
+  application:
+    name: spring-cloud-alibaba-nacos
+  cloud:
+    config:
+      override-none: true
+
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        group: CLOUD
+        namespace: 61803b42-a276-4077-b83d-31a85e296630
+        service: ${spring.application.name}
+        server-addr:
+
+
+
+  config:
+    import:
+      - optional:configserver:http://myhost:8888
+      - configserver:11
+#      - nacos:confg-02.yaml?group=CLOUD
+#      - nacos:config-01.yaml
+
+server:
+  port: 9001

@@ -1,0 +1,18 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: nacos-consumer
+
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        file-extension: yaml
+        namespace: 61803b42-a276-4077-b83d-31a85e296630
+        group: nacos
+  config:
+    import:
+      - nacos:${spring.application.name}${spring.profiles.active != null ? '-' + spring.profiles.active:}.${spring.cloud.nacos.config.file-extension}
+#      - -${spring.profiles.active:}.${spring.cloud.nacos.config.file-extension}

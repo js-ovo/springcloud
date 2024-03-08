@@ -1,0 +1,14 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: nacos-provider
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        service: ${spring.application.name}
+        group: nacos
+        namespace: 61803b42-a276-4077-b83d-31a85e296630
+
+

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cloud-consul
+
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        instance-id: consul
+        management-port: 9000
+        management-tags: A1,A2
+        management-suffix: custom-prefix
+management:
+  server:
+    port: 9000

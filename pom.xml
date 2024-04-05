@@ -24,6 +24,7 @@
         <module>spring-cloud-consul-provider</module>
         <module>spring-cloud-consul-consumer</module>
         <module>spring-boot-3</module>
+        <module>common-model</module>
     </modules>
 
     <packaging>pom</packaging>
